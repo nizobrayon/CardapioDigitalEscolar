@@ -1,8 +1,8 @@
-import LoginAluno from "./pages/Login/LoginAluno";
+import Cadastro from "./pages/Cadastro";
 
 function App() {
   return (
-    <LoginAluno/>
+    <Cadastro/>
   );
 }
 

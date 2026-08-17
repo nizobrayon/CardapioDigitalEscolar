@@ -1,4 +1,4 @@
-import "../login/Login.css"
+import "../pages/Login/Login.css"
 
 function Cadastro(){
     return(
@@ -42,7 +42,7 @@ function Cadastro(){
            
            <p className="cadastro-text">
           Ainda não possui uma conta?
-          <a href="../login/Login.jsx">Login</a>
+          <a href="/loginaluno">Login</a>
         </p>
             </div>
         </div>
