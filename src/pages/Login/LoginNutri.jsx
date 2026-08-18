@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Login.css";
 
 function LoginAluno() {
@@ -12,7 +13,7 @@ function LoginAluno() {
         </p>
 
         <p className="login-subtitle">
-          Aluno
+          Nutricionista
         </p>
 
           <div className="input-group">
@@ -24,10 +25,10 @@ function LoginAluno() {
           </div>
 
           <div className="input-group">
-            <label>RA do Aluno </label>
+            <label>CRN do Nutricionista </label>
             <input
-              type="RA"
-              placeholder="Digite seu RA"
+              type="text"
+              placeholder="Digite seu CRN"
             />
           </div>
 
@@ -38,18 +39,22 @@ function LoginAluno() {
               placeholder="Digite sua senha"
             />
           </div>
-          <div class="container">
-            <button>Botão 1</button>
-            <button>Botão 2</button>
-          </div>
+          <Link to="/loginAluno">
+          <button>Aluno</button>
+          </Link>
+
+         <Link to="/loginNutri">
+          <button>Nutricionista</button>
+         </Link>
+          
 
           <button type="submit">
             Entrar
           </button>
 
         <p className="cadastro-text">
-          Ainda não possui uma conta?
-          <a href="../Cadastro/Cadastro.jsx"> Cadastre-se</a>
+           Ainda não possui uma conta?{" "}
+          <Link to="/cadastro">Cadastre-se</Link>
         </p>
 
       </div>

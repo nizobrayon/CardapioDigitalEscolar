@@ -5,7 +5,7 @@ function Cadastro(){
         <div className="loginContainer">
             <div className="login-box">
 
-               <h1>Jardim Secreto</h1>
+               <h1>Cardápio Digital Escolar</h1>
 
                <p className="login-subtitle">
                 Cadastre-se
