@@ -12,8 +12,8 @@ function LoginAluno() {
           Entre na sua conta
         </p>
 
-        <p className="login-subtitle">
-          Nutricionista
+        <p className="login-subtitle2">
+          NUTRICIONISTA
         </p>
 
           <div className="input-group">
@@ -39,6 +39,8 @@ function LoginAluno() {
               placeholder="Digite sua senha"
             />
           </div>
+
+          <div className="container">
           <Link to="/loginAluno">
           <button>Aluno</button>
           </Link>
@@ -46,11 +48,11 @@ function LoginAluno() {
          <Link to="/loginNutri">
           <button>Nutricionista</button>
          </Link>
-          
+          </div>
 
-          <button type="submit">
-            Entrar
-          </button>
+          <Link to="/home">
+        <button type="submit"> Entrar </button>
+        </Link>
 
         <p className="cadastro-text">
            Ainda não possui uma conta?{" "}

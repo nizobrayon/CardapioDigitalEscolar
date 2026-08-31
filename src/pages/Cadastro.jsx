@@ -7,7 +7,7 @@ function Cadastro(){
 
                <h1>Cardápio Digital Escolar</h1>
 
-               <p className="login-subtitle">
+               <p className="login-subtitle-cadastro">
                 Cadastre-se
                 </p>
 

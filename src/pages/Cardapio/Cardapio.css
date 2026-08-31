@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cardapio-page {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: #f8f9f7;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* HEADER */
+
+.header {
+  height: 104px;
+
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 8.5%;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* LOGO */
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #286b3d;
+
+  font-size: 30px;
+  font-weight: bold;
+
+  text-decoration: none;
+}
+
+
+/* MENU */
+
+.menu {
+  display: flex;
+  gap: 42px;
+}
+
+.menu a {
+  position: relative;
+
+  text-decoration: none;
+
+  color: #222;
+
+  font-size: 21px;
+
+  padding: 8px 0;
+}
+
+.menu a:hover {
+  color: #286b3d;
+}
+
+
+/* ITEM ATIVO */
+
+.menu .active {
+  color: #286b3d;
+}
+
+.menu .active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: -12px;
+
+  height: 3px;
+
+  background-color: #286b3d;
+}
+
+
+/* CONTEÚDO */
+
+.cardapio-container {
+  flex: 1;
+
+  width: 85%;
+  max-width: 1100px;
+
+  margin: 55px auto;
+}
+
+
+/* TÍTULO */
+
+.cardapio-title {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardapio-title h1 {
+  font-size: 38px;
+
+  color: #292929;
+
+  margin-bottom: 8px;
+}
+
+.cardapio-title p {
+  color: #666;
+
+  font-size: 17px;
+}
+
+
+/* BOTÃO */
+
+.btn-criar {
+  background-color: #286b3d;
+
+  color: white;
+
+  text-decoration: none;
+
+  padding: 14px 22px;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+
+  font-weight: bold;
+}
+
+.btn-criar:hover {
+  background-color: #205831;
+}
+
+
+/* FOOTER */
+
+.footer {
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #286b3d;
+
+  color: white;
+
+  font-size: 15px;
+}

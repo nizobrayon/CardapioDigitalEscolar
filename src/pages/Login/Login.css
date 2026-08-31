@@ -28,62 +28,78 @@
 .login-subtitle {
   text-align: center;
   color: #64748b;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.login-subtitle2 {
+   text-align: center;
+   color: #000000;
+   margin-bottom: 20px;
+   font-weight: bold;
+   font-size: 24px
+} 
+
+.login-subtitle-cadastro {
+  text-align: center;
+  color: #000000;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .input-group {
-  margin-bottom: 20px;
+   margin-bottom: 20px;
 }
 
 .input-group label {
   display: block;
-  margin-bottom: 10px;
-  color: #1e293b;
-  font-weight: bold;
+   margin-bottom: 10px;
+   color: #1e293b;
+   font-weight: bold;
 }
 
 .input-group input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  font-size: 15px;
-  outline: none;
+   width: 100%;
+   padding: 12px;
+   border: 1px solid #cbd5e1;
+   border-radius: 6px;
+   font-size: 15px;
+   outline: none;
 }
 
 .input-group input:focus {
-  border-color: #16a34a;
+   border-color: #16a34a;
 }
 
 .login-box button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  background-color: #16a34a;
-  color: white;
-  font-size: 17px;
+   width: 100%;
+   padding: 12px;
+   border: none;
+   border-radius: 6px;
+   background-color: #16a34a;
+   color: white;
+   font-size: 17px;
 }
 
 .login-box button:hover {
-  background-color: #166534;
+   background-color: #166534;
 }
 
 .cadastro-text {
-  text-align: center;
-  margin-top: 25px;
-  color: #64748b;
-  font-size: 14px;
+   text-align: center;
+   margin-top: 25px;
+   color: #64748b;
+   font-size: 14px;
 }
 
 .cadastro-text a {
-  color: #2563eb;
-  font-weight: bold;
-  text-decoration: none;
+   color: #2563eb;
+   font-weight: bold;
+   text-decoration: none;
 }
 
 .cadastro-text a:hover {
-  text-decoration: underline;
+   text-decoration: underline;
 }
 
 .container {

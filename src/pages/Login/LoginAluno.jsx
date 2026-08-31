@@ -12,8 +12,8 @@ function LoginAluno() {
           Entre na sua conta
         </p>
 
-        <p className="login-subtitle">
-          Aluno
+        <p className="login-subtitle2">
+          ALUNO
         </p>
 
         <div className="input-group">
@@ -41,7 +41,7 @@ function LoginAluno() {
         </div>
 
         <div className="container">
-          <Link to="/loginAluno">
+          <Link to="/LoginAluno">
           <button>Aluno</button>
           </Link>
 
@@ -50,10 +50,10 @@ function LoginAluno() {
          </Link>
           </div>
 
-        <button type="submit">
-          Entrar
-        </button>
-
+        <Link to="/home">
+        <button type="submit"> Entrar </button>
+        </Link>
+        
         <p className="cadastro-text">
           Ainda não possui uma conta?
           <a href="/cadastro"> Cadastre-se</a>

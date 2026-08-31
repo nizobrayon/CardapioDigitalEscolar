@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.criar-page {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: #f8f9f7;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* HEADER */
+
+.header {
+  height: 104px;
+
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 8.5%;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #286b3d;
+
+  font-size: 30px;
+  font-weight: bold;
+
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  gap: 42px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #222;
+
+  font-size: 21px;
+}
+
+.menu a:hover {
+  color: #286b3d;
+}
+
+.menu .active {
+  color: #286b3d;
+}
+
+
+/* CONTAINER */
+
+.criar-container {
+  flex: 1;
+
+  width: 90%;
+  max-width: 750px;
+
+  margin: 45px auto;
+}
+
+
+/* VOLTAR */
+
+.voltar {
+  color: #286b3d;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  display: inline-block;
+
+  margin-bottom: 20px;
+}
+
+.voltar:hover {
+  text-decoration: underline;
+}
+
+
+/* FORM */
+
+.form-box {
+  background-color: white;
+
+  padding: 40px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+}
+
+.form-box h1 {
+  font-size: 32px;
+
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  color: #666;
+
+  margin-bottom: 30px;
+}
+
+
+/* CAMPOS */
+
+.campo {
+  display: flex;
+
+  flex-direction: column;
+
+  margin-bottom: 22px;
+}
+
+.campo label {
+  font-weight: bold;
+
+  margin-bottom: 8px;
+
+  color: #333;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+
+  width: 100%;
+
+  padding: 13px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  font-family: Arial, sans-serif;
+
+  outline: none;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+  border-color: #286b3d;
+}
+
+.campo textarea {
+  resize: vertical;
+}
+
+
+/* BOTÕES */
+
+.form-buttons {
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.btn-cancelar {
+  padding: 13px 22px;
+
+  border-radius: 8px;
+
+  border: 1px solid #ccc;
+
+  text-decoration: none;
+
+  color: #555;
+}
+
+.btn-salvar {
+  padding: 13px 22px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background-color: #286b3d;
+
+  color: white;
+
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+.btn-salvar:hover {
+  background-color: #205831;
+}
+
+
+/* FOOTER */
+
+.footer {
+  height: 70px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background-color: #286b3d;
+
+  color: white;
+
+  font-size: 15px;
+}
