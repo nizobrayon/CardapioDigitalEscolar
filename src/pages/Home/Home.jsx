@@ -15,7 +15,7 @@ function Home() {
         <nav className="menu">
           <a href="#">Início</a>
           <Link to ="/cardapio">
-          <a href="#" className="active">Cardápio</a>
+          Cardápio
           </Link>
           <a href="#">Avaliar</a>
           <a href="#">Sugerir</a>

@@ -1,8 +1,56 @@
-import { Link } from "react-router-dom";
-import "./CriarRefeicao.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import api from "../../services/api";
+import "./CriarRefeicao.css"; 
+
+
 
 function CriarRefeicao() {
+
+  const [nomeRefeicao, setNomeRefeicao] = useState("");
+  const [descricao, setDescricao] = useState("");
+  const [categoria, setCategoria] = useState("");
+
+  const navigate = useNavigate();
+
+
+     async function handleCriarRefeicao(event) {
+
+    event.preventDefault();
+
+    try {
+      // Envia os dados para o backend
+      api.post("/refeicoes", {
+        nomeRefeicao: nomeRefeicao,
+        descricao: descricao,
+        categoria: categoria,
+      }).then(() => {
+        alert("Cadastro realizado com sucesso!");
+        // Depois do cadastro, vai para o login
+        navigate("/cardapio");
+      }).catch(() => {
+        alert("Erro ao realizar o cadastro");
+      })
+
+    } catch (error) {
+
+      console.error(error);
+
+      if (error.response) {
+
+        alert(
+          error.response.data.mensagem ||
+          "Erro ao realizar cadastro."
+        );
+
+      } else {
+
+        alert("Não foi possível conectar ao servidor.");
+
+      }
+    }
+  }
+
 
   return (
     <div className="criar-page">
@@ -51,10 +99,10 @@ function CriarRefeicao() {
 
           <p className="form-subtitle">
             Cadastre uma nova refeição no cardápio escolar.
-          </p>
+           </p>
 
 
-          <form>
+          <form onSubmit={handleCriarRefeicao}>
 
             {/* NOME */}
 
@@ -67,6 +115,11 @@ function CriarRefeicao() {
               <input
                 type="text"
                 placeholder="Ex: Arroz, feijão e frango"
+                value={nomeRefeicao}
+                onChange={(event) =>
+                  setNomeRefeicao(event.target.value)
+                }
+
               />
 
             </div>
@@ -83,7 +136,12 @@ function CriarRefeicao() {
               <textarea
                 placeholder="Descreva os alimentos que fazem parte da refeição..."
                 rows="5"
-              ></textarea>
+
+                value={descricao}
+                onChange={(event) =>
+                setDescricao(event.target.value)
+                }
+                />
 
             </div>
 
@@ -96,11 +154,15 @@ function CriarRefeicao() {
                 Categoria
               </label>
 
-              <select>
+              <input
+                type="text"
+                placeholder="Ex: Janta, Almoço, Café da Manhã, etc..."
+                value={categoria}
+                onChange={(event) =>
+                  setCategoria(event.target.value)
+                }
 
-
-
-              </select>
+              />
 
             </div>
 
@@ -117,7 +179,7 @@ function CriarRefeicao() {
               </Link>
 
               <button
-                type="button"
+                type="submmit"
                 className="btn-salvar"
               >
                 Criar refeição

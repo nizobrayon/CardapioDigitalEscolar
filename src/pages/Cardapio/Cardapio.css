@@ -1,172 +1,208 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-.cardapio-page {
-  min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-
-  background-color: #f8f9f7;
-
-  font-family: Arial, Helvetica, sans-serif;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f5;
 }
 
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-/* HEADER */
+/* CABEÇALHO */
 
-.header {
-  height: 104px;
-
+.cabecalho {
+  height: 70px;
   background-color: white;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding: 0 8.5%;
-
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  padding: 0 60px;
+  border-bottom: 1px solid #eeeeee;
 }
-
-
-/* LOGO */
 
 .logo {
-  display: flex;
-  align-items: center;
-
-  gap: 10px;
-
-  color: #286b3d;
-
-  font-size: 30px;
+  font-size: 22px;
   font-weight: bold;
-
-  text-decoration: none;
+  color: #286b3d;
 }
 
-
-/* MENU */
-
-.menu {
+.cabecalho nav {
   display: flex;
-  gap: 42px;
+  gap: 30px;
 }
 
-.menu a {
-  position: relative;
-
+.cabecalho nav a {
   text-decoration: none;
-
-  color: #222;
-
-  font-size: 21px;
-
-  padding: 8px 0;
+  color: #555;
+  font-size: 16px;
 }
 
-.menu a:hover {
+.cabecalho nav a:hover {
   color: #286b3d;
 }
 
-
-/* ITEM ATIVO */
-
-.menu .active {
+.cabecalho nav .ativo {
   color: #286b3d;
+  font-weight: bold;
 }
-
-.menu .active::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  right: 0;
-
-  bottom: -12px;
-
-  height: 3px;
-
-  background-color: #286b3d;
-}
-
 
 /* CONTEÚDO */
 
-.cardapio-container {
+.conteudo {
   flex: 1;
-
-  width: 85%;
+  padding: 50px 80px;
   max-width: 1100px;
-
-  margin: 55px auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
-
-/* TÍTULO */
-
-.cardapio-title {
+.titulo-cardapio {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
 
+.titulo-cardapio h1 {
+  margin: 0;
+  color: #286b3d;
+  font-size: 32px;
+}
+
+.titulo-cardapio p {
+  margin-top: 8px;
+  color: #666;
+}
+
+/* BOTÃO CRIAR */
+
+.botao-criar {
+  background-color: #286b3d;
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.botao-criar:hover {
+  background-color: #1f5430;
+}
+
+/* CARDS */
+
+.lista-refeicoes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-refeicao {
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 22px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.cardapio-title h1 {
-  font-size: 38px;
-
-  color: #292929;
-
-  margin-bottom: 8px;
+.informacoes-refeicao h2 {
+  margin: 0 0 8px;
+  color: #333;
+  font-size: 21px;
 }
 
-.cardapio-title p {
+.descricao {
+  margin: 0 0 12px;
   color: #666;
-
-  font-size: 17px;
 }
 
-
-/* BOTÃO */
-
-.btn-criar {
-  background-color: #286b3d;
-
-  color: white;
-
-  text-decoration: none;
-
-  padding: 14px 22px;
-
-  border-radius: 8px;
-
-  font-size: 16px;
-
+.categoria {
+  display: inline-block;
+  background-color: #e8f3eb;
+  color: #286b3d;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 13px;
   font-weight: bold;
 }
 
-.btn-criar:hover {
-  background-color: #205831;
+/* BOTÕES */
+
+.acoes {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
 }
 
+.botao-editar,
+.botao-excluir {
+  border: none;
+  padding: 9px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+}
 
-/* FOOTER */
-
-.footer {
-  height: 70px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+.botao-editar {
   background-color: #286b3d;
-
   color: white;
+}
 
-  font-size: 15px;
+.botao-excluir {
+  background-color: #d9534f;
+  color: white;
+}
+
+.botao-editar:hover {
+  background-color: #1f5430;
+}
+
+.botao-excluir:hover {
+  background-color: #b52b27;
+}
+
+/* MENSAGENS */
+
+.mensagem {
+  color: #666;
+}
+
+.erro {
+  color: #d9534f;
+}
+
+.sem-refeicoes {
+  text-align: center;
+  padding: 50px;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.sem-refeicoes p {
+  color: #666;
+}
+
+.sem-refeicoes a {
+  color: #286b3d;
+  font-weight: bold;
+}
+
+/* RODAPÉ */
+
+footer {
+  background-color: #286b3d;
+  color: white;
+  text-align: center;
+  padding: 18px;
+  margin-top: auto;
 }

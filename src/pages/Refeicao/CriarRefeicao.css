@@ -233,3 +233,79 @@
 
   font-size: 15px;
 }
+
+.gerenciar {
+  flex: 1;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.gerenciar h1 {
+  margin-bottom: 8px;
+  color: #286b3d;
+}
+
+.gerenciar p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.gerenciar form {
+  background-color: white;
+  padding: 30px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+}
+
+.gerenciar label {
+  display: block;
+  margin-bottom: 7px;
+  margin-top: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.gerenciar label:first-child {
+  margin-top: 0;
+}
+
+.gerenciar input,
+.gerenciar textarea {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.gerenciar textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.botoes button {
+  border: none;
+  padding: 11px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancelar {
+  background-color: #eee;
+  color: #333;
+}
+
+.salvar {
+  background-color: #286b3d;
+  color: white;
+}
