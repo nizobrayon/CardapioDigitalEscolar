@@ -61,7 +61,7 @@ function Cardapio() {
 
       <header className="cabecalho">
         <div className="logo">
-          🍽️ Cantina Escola
+        Cardápio Digital Escolar
         </div>
 
         <nav>
@@ -151,7 +151,6 @@ function Cardapio() {
       </main>
 
       <footer>
-        © 2026 Cantina Escola - Cardápio Escolar Digital
       </footer>
 
     </div>

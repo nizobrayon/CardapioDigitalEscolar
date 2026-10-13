@@ -7,11 +7,13 @@ import Home from "./pages/Home/Home";
 import Cardapio from "./pages/Cardapio/Cardapio";
 import CriarRefeicao from "./pages/Refeicao/CriarRefeicao";
 import GerenciarRefeicoes from "./pages/Refeicao/GerenciarRefeicao";
+import Perfil from "./pages/Perfil/Perfil";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/perfil" element={<Perfil />} />
         <Route path="/gerenciarRefeicao/:id" element={<GerenciarRefeicoes />} />
         <Route path="/criar-refeicao" element={<CriarRefeicao />} />
         <Route path="/loginAluno" element={<LoginAluno />} />

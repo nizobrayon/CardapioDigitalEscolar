@@ -1,37 +1,48 @@
+
 import "./Home.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Home() {
+  const location = useLocation();
+  const usuario = location.state?.usuario;
+
+  const nomeUsuario = usuario?.nomeusuario || "Meu perfil";
+
   return (
     <div className="home">
-
       {/* CABEÇALHO */}
       <header className="header">
         <div className="logo">
-          <span className="logo-icon">🍽️</span>
-          <span>Cantina Escola</span>
+          <span>Cantina Digital Escolar</span>
         </div>
 
         <nav className="menu">
-          <a href="#">Início</a>
-          <Link to ="/cardapio">
-          Cardápio
-          </Link>
-          <a href="#">Avaliar</a>
-          <a href="#">Sugerir</a>
+          <Link to="/home">Início</Link>
+          <Link to="/cardapio">Cardápio</Link>
+          <Link to="/avaliar">Avaliar</Link>
+          <Link to="/sugerir">Sugerir</Link>
         </nav>
+
+        {/* PERFIL DO USUÁRIO */}
+        <Link to="/perfil" className="perfil">
+          <div className="perfil-icone">
+            <span>👤</span>
+          </div>
+
+          <div className="perfil-info">
+            <span className="perfil-nome">{nomeUsuario}</span>
+            <span className="perfil-texto">Meu perfil</span>
+          </div>
+        </Link>
       </header>
 
       {/* ÁREA PRINCIPAL */}
       <main className="main-content">
-        {/* O conteúdo do Cardápio poderá entrar aqui depois */}
+        {/* O conteúdo do cardápio poderá entrar aqui */}
       </main>
 
       {/* RODAPÉ */}
-      <footer className="footer">
-        © 2026 Cantina Escola - Cardápio Escolar Digital
-      </footer>
-
+      <footer className="footer"></footer>
     </div>
   );
 }

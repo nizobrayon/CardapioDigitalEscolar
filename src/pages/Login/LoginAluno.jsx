@@ -1,64 +1,142 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
 function LoginAluno() {
+  const [email, setEmail] = useState("");
+  const [raAluno, setRaAluno] = useState("");
+  const [senha, setSenha] = useState("");
+  const [mensagem, setMensagem] = useState("");
+  const [carregando, setCarregando] = useState(false);
+
+  const navigate = useNavigate();
+
+  async function fazerLogin(event) {
+    event.preventDefault();
+    setMensagem("");
+
+    if (!email.trim() || !raAluno.trim() || !senha) {
+      setMensagem("Preencha o e-mail, o RA e a senha.");
+      return;
+    }
+
+    try {
+      setCarregando(true);
+
+      const resposta = await fetch(
+        "http://localhost:3000/usuarios/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            emailUsuario: email.trim(),
+            raAluno: raAluno.trim(),
+            senha,
+          }),
+        }
+      );
+
+      const dados = await resposta.json();
+
+      if (!resposta.ok) {
+        throw new Error(
+          dados.mensagem || "Não foi possível entrar."
+        );
+      }
+
+      // Guarda o nome para poder utilizá-lo na tela inicial.
+      navigate("/home", {
+        state: { usuario: dados.usuario },
+      });
+    } catch (erro) {
+      setMensagem(
+        erro.message === "Failed to fetch"
+          ? "Não foi possível conectar ao servidor."
+          : erro.message
+      );
+    } finally {
+      setCarregando(false);
+    }
+  }
+
   return (
     <div className="loginContainer">
       <div className="login-box">
-
         <h1>Cardápio Digital Escolar</h1>
 
         <p className="login-subtitle">
           Entre na sua conta
         </p>
 
-        <p className="login-subtitle2">
-          ALUNO
-        </p>
+        <p className="login-subtitle2">ALUNO</p>
 
-        <div className="input-group">
-          <label>E-mail</label>
-          <input
-            type="email"
-            placeholder="Digite seu e-mail"
-          />
-        </div>
-
-        <div className="input-group">
-          <label>RA do Aluno</label>
-          <input
-            type="text"
-            placeholder="Digite seu RA"
-          />
-        </div>
-
-        <div className="input-group">
-          <label>Senha</label>
-          <input
-            type="password"
-            placeholder="Digite sua senha"
-          />
-        </div>
-
-        <div className="container">
-          <Link to="/LoginAluno">
-          <button>Aluno</button>
-          </Link>
-
-         <Link to="/loginNutri">
-          <button>Nutricionista</button>
-         </Link>
+        <form onSubmit={fazerLogin}>
+          <div className="input-group">
+            <label htmlFor="email">E-mail</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="Digite seu e-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              autoComplete="email"
+              required
+            />
           </div>
 
-        <Link to="/home">
-        <button type="submit"> Entrar </button>
-        </Link>
-        
-        <p className="cadastro-text">
-          Ainda não possui uma conta?
-          <a href="/cadastro"> Cadastre-se</a>
-        </p>
+          <div className="input-group">
+            <label htmlFor="raAluno">RA do Aluno</label>
+            <input
+              id="raAluno"
+              type="text"
+              inputMode="numeric"
+              placeholder="Digite seu RA"
+              value={raAluno}
+              onChange={(e) => setRaAluno(e.target.value)}
+              required
+            />
+          </div>
 
+          <div className="input-group">
+            <label htmlFor="senha">Senha</label>
+            <input
+              id="senha"
+              type="password"
+              placeholder="Digite sua senha"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              autoComplete="current-password"
+              required
+            />
+          </div>
+
+          {mensagem && (
+            <p className="mensagem-cadastro" role="alert">
+              {mensagem}
+            </p>
+          )}
+
+          <div className="container">
+            <Link to="/loginaluno">
+              <button type="button">Aluno</button>
+            </Link>
+
+            <Link to="/loginNutri">
+              <button type="button">Nutricionista</button>
+            </Link>
+          </div>
+
+          <button type="submit" disabled={carregando}>
+            {carregando ? "Entrando..." : "Entrar"}
+          </button>
+        </form>
+
+        <p className="cadastro-text">
+          Ainda não possui uma conta?{" "}
+          <Link to="/cadastro">Cadastre-se</Link>
+        </p>
       </div>
     </div>
   );

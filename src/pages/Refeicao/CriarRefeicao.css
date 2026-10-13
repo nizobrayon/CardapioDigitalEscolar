@@ -4,91 +4,85 @@
   box-sizing: border-box;
 }
 
+/* PÁGINA */
+
 .criar-page {
   min-height: 100vh;
-
+  width: 100%;
   display: flex;
   flex-direction: column;
-
-  background-color: #f8f9f7;
-
+  background-color: #f8fafc;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 
 /* HEADER */
 
 .header {
-  height: 104px;
-
-  background-color: white;
+  height: 90px;
+  width: 100%;
+  background-color: #ffffff;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 8.5%;
+  padding: 0 8%;
 
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
   display: flex;
   align-items: center;
-
   gap: 10px;
 
-  color: #286b3d;
-
-  font-size: 30px;
+  color: #166534;
+  font-size: 28px;
   font-weight: bold;
-
   text-decoration: none;
 }
 
 .menu {
   display: flex;
-  gap: 42px;
+  gap: 35px;
 }
 
 .menu a {
   text-decoration: none;
-  color: #222;
-
-  font-size: 21px;
+  color: #1e293b;
+  font-size: 17px;
 }
 
 .menu a:hover {
-  color: #286b3d;
+  color: #166534;
 }
 
 .menu .active {
-  color: #286b3d;
+  color: #166534;
+  font-weight: bold;
 }
-
 
 /* CONTAINER */
 
 .criar-container {
   flex: 1;
 
-  width: 90%;
+  width: 100%;
   max-width: 750px;
 
-  margin: 45px auto;
+  margin: 40px auto;
+  padding: 0 20px;
 }
-
 
 /* VOLTAR */
 
 .voltar {
-  color: #286b3d;
+  display: inline-block;
 
+  color: #166534;
   text-decoration: none;
 
-  font-size: 16px;
-
-  display: inline-block;
+  font-size: 15px;
 
   margin-bottom: 20px;
 }
@@ -97,174 +91,199 @@
   text-decoration: underline;
 }
 
-
-/* FORM */
+/* FORMULÁRIO */
 
 .form-box {
-  background-color: white;
+  width: 100%;
 
-  padding: 40px;
+  padding: 25px;
 
-  border-radius: 15px;
+  background-color: #ffffff;
 
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+  border-radius: 12px;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .form-box h1 {
-  font-size: 32px;
+  text-align: center;
+
+  color: #166534;
+
+  font-size: 30px;
 
   margin-bottom: 8px;
 }
 
 .form-subtitle {
-  color: #666;
+  text-align: center;
 
-  margin-bottom: 30px;
+  color: #64748b;
+
+  margin-bottom: 25px;
 }
-
 
 /* CAMPOS */
 
 .campo {
-  display: flex;
-
-  flex-direction: column;
-
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .campo label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #1e293b;
+
   font-weight: bold;
-
-  margin-bottom: 8px;
-
-  color: #333;
 }
 
 .campo input,
 .campo textarea,
 .campo select {
-
   width: 100%;
 
-  padding: 13px;
+  padding: 12px;
 
-  border: 1px solid #ccc;
+  border: 1px solid #cbd5e1;
 
-  border-radius: 8px;
+  border-radius: 6px;
 
   font-size: 15px;
 
   font-family: Arial, sans-serif;
 
   outline: none;
+
+  background-color: #ffffff;
 }
 
 .campo input:focus,
 .campo textarea:focus,
 .campo select:focus {
-  border-color: #286b3d;
+  border-color: #16a34a;
 }
 
 .campo textarea {
+  min-height: 100px;
   resize: vertical;
 }
-
 
 /* BOTÕES */
 
 .form-buttons {
-
   display: flex;
 
-  justify-content: flex-end;
+  justify-content: center;
 
-  gap: 12px;
+  gap: 15px;
 
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
-.btn-cancelar {
-  padding: 13px 22px;
-
-  border-radius: 8px;
-
-  border: 1px solid #ccc;
-
-  text-decoration: none;
-
-  color: #555;
-}
-
+.btn-cancelar,
 .btn-salvar {
-  padding: 13px 22px;
+  padding: 12px 22px;
 
-  border: none;
-
-  border-radius: 8px;
-
-  background-color: #286b3d;
-
-  color: white;
+  border-radius: 6px;
 
   font-size: 15px;
 
   cursor: pointer;
+
+  text-decoration: none;
+}
+
+.btn-cancelar {
+  background-color: #eee;
+
+  color: #333;
+
+  border: none;
+}
+
+.btn-cancelar:hover {
+  background-color: #ddd;
+}
+
+.btn-salvar {
+  background-color: #16a34a;
+
+  color: white;
+
+  border: none;
 }
 
 .btn-salvar:hover {
-  background-color: #205831;
+  background-color: #166534;
 }
-
 
 /* FOOTER */
 
 .footer {
-  height: 70px;
+  min-height: 70px;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  background-color: #286b3d;
+  background-color: #166534;
 
   color: white;
 
-  font-size: 15px;
+  font-size: 14px;
 }
+
+/* GERENCIAR */
 
 .gerenciar {
   flex: 1;
+
   width: 100%;
   max-width: 650px;
+
   margin: 0 auto;
-  padding: 50px 20px;
+
+  padding: 40px 20px;
 }
 
 .gerenciar h1 {
+  text-align: center;
+
   margin-bottom: 8px;
-  color: #286b3d;
+
+  color: #166534;
 }
 
 .gerenciar p {
-  color: #666;
-  margin-bottom: 30px;
+  text-align: center;
+
+  color: #64748b;
+
+  margin-bottom: 25px;
 }
 
 .gerenciar form {
-  background-color: white;
-  padding: 30px;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
+  background-color: #ffffff;
+
+  padding: 25px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .gerenciar label {
   display: block;
-  margin-bottom: 7px;
-  margin-top: 18px;
+
+  margin-bottom: 10px;
+  margin-top: 20px;
+
   font-weight: bold;
-  color: #333;
+
+  color: #1e293b;
 }
 
 .gerenciar label:first-child {
@@ -274,38 +293,71 @@
 .gerenciar input,
 .gerenciar textarea {
   width: 100%;
-  padding: 11px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+
+  padding: 12px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 6px;
+
   font-size: 15px;
+
   font-family: Arial, sans-serif;
+
+  outline: none;
+}
+
+.gerenciar input:focus,
+.gerenciar textarea:focus {
+  border-color: #16a34a;
 }
 
 .gerenciar textarea {
   min-height: 100px;
+
   resize: vertical;
 }
 
+/* BOTÕES DO GERENCIAR */
+
 .botoes {
   display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+
+  justify-content: center;
+
+  gap: 15px;
+
   margin-top: 25px;
 }
 
 .botoes button {
   border: none;
-  padding: 11px 18px;
-  border-radius: 5px;
+
+  padding: 12px 22px;
+
+  border-radius: 6px;
+
   cursor: pointer;
+
+  font-size: 15px;
 }
 
 .cancelar {
   background-color: #eee;
+
   color: #333;
 }
 
+.cancelar:hover {
+  background-color: #ddd;
+}
+
 .salvar {
-  background-color: #286b3d;
+  background-color: #16a34a;
+
   color: white;
+}
+
+.salvar:hover {
+  background-color: #166534;
 }
